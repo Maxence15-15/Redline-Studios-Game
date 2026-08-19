@@ -1,0 +1,13 @@
+{
+  "games": [
+    {
+      "id": "carlife",
+      "name": "CarLife",
+      "versions": "0.1.0",
+      "description": "Simulation automobile et mécanique développée par RedLine Studios.",
+      "coverURL": "",
+      "downloadURL": "",
+      "sizeMb": 0
+    }
+  ]
+}
