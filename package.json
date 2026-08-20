@@ -1,0 +1,13 @@
+{
+  "name": "redline-launcher",
+  "version": "1.0.0",
+  "description": "RedLine Launcher",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^43.4.1"
+  }
+}
