@@ -8,6 +8,7 @@ import SplashScreen from "./components/SplashScreen";
 import WishlistPage from "./components/WishlistPage";
 import TopBar, { type Page, type StoreFilter } from "./components/TopBar";
 import type { Manifest, Game } from "./types";
+import { check } from "@tauri-apps/plugin-updater";
 
 const MANIFEST_URL = "https://raw.githubusercontent.com/Maxence15-15/Redline-Studios-Game/main/manifest.json";
 
@@ -29,6 +30,37 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [wishlist, setWishlist] = useState<Set<string>>(new Set());
   const [wishlistError, setWishlistError] = useState<string | null>(null);
+
+    useEffect(() => {
+    const checkForUpdates = async () => {
+      console.log("[updater] Vérification des mises à jour...");
+      try {
+        const update = await check();
+        console.log("[updater] Résultat :", update);
+
+        if (update) {
+          console.log(
+            `Mise à jour disponible : ${update.version}`
+          );
+
+          const shouldUpdate = window.confirm(
+            `Une nouvelle version du launcher est disponible (${update.version}).\n\nVoulez-vous l'installer maintenant ?`
+          );
+
+          if (shouldUpdate) {
+            await update.downloadAndInstall();
+            console.log("Mise à jour installée.");
+          }
+        } else {
+          console.log("Le launcher est à jour.");
+        }
+      } catch (error) {
+        console.error("Erreur lors de la vérification des mises à jour :", error);
+      }
+    };
+
+    checkForUpdates();
+  }, []);
 
   useEffect(() => {
     fetch(MANIFEST_URL)

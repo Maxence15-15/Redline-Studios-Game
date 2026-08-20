@@ -1,6 +1,6 @@
 {
   "productName": "Mon Studio Launcher",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "identifier": "com.monstudio.launcher",
   "build": {
     "beforeDevCommand": "npm run dev",

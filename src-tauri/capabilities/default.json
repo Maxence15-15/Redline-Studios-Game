@@ -8,6 +8,7 @@
     "core:event:default",
     "core:event:allow-listen",
     "core:window:default",
-    "core:path:default"
+    "core:path:default",
+    "updater:default"
   ]
 }
