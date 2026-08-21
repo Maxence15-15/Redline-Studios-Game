@@ -3,6 +3,7 @@ node_modules/
 dist/
 
 out/
+<<<<<<< HEAD
 
 .env
 
@@ -12,4 +13,10 @@ src-tauri/target/
 
 *.key
 
+=======
+.env
+src-tauri/target/
+.env.*
+*.key
+>>>>>>> 5a1a4ec (Mise à jour du launcher)
 *.pem
